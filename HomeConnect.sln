@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeConnect", "src\HomeConnect.csproj", "{E7BE7B52-6CC8-415C-8935-BEB944C7FA0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeConnect", "src\HomeConnect\HomeConnect.csproj", "{E7BE7B52-6CC8-415C-8935-BEB944C7FA0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
