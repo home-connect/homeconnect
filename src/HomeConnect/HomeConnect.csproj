@@ -17,7 +17,8 @@
         <Exec Command="npx postcss $(ProjectDir)obj/$(ConfigurationName)/$(TargetFramework)/scopedcss/bundle/$(ProjectName).styles.css -r" />
     </Target>
 
-    <Target Name="NpmInstall" BeforeTargets="CollectPackageReferences">
+    <Target Name="NpmInstall" BeforeTargets="CollectPackageReferences" Condition="!Exists('node_modules')">
+      <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
       <Exec WorkingDirectory="$(ProjectDir)" Command="npm ci"      Condition="'$(RestorePackagesWithLockFile)' == 'true'" />
       <Exec WorkingDirectory="$(ProjectDir)" Command="npm install" Condition="'$(RestorePackagesWithLockFile)' != 'true'" />
 	  </Target>
