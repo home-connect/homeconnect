@@ -16,4 +16,9 @@
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
         <Exec Command="npx postcss $(ProjectDir)obj/$(ConfigurationName)/$(TargetFramework)/scopedcss/bundle/$(ProjectName).styles.css -r" />
     </Target>
+
+    <Target Name="NpmInstall" BeforeTargets="CollectPackageReferences">
+      <Exec WorkingDirectory="$(ProjectDir)" Command="npm ci"      Condition="'$(RestorePackagesWithLockFile)' == 'true'" />
+      <Exec WorkingDirectory="$(ProjectDir)" Command="npm install" Condition="'$(RestorePackagesWithLockFile)' != 'true'" />
+	  </Target>
 </Project>
